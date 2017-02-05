@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.thumbnail-image {
+  max-height: 200px; }
+
+.ellipsis {
+  overflow: hidden;
+  /*字太多時會...*/
+  white-space: nowrap;
+  text-overflow: ellipsis; }
