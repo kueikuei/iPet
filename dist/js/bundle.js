@@ -6,41 +6,41 @@ var data = '';
 var str = '';
 var xhr = new XMLHttpRequest();
 
-// xhr.open('GET',REQUEST_URL);
-// xhr.send();
+xhr.open('GET',REQUEST_URL);
+xhr.send();
 
-// xhr.onreadystatechange=function(){
+xhr.onreadystatechange=function(){
 
 
-//   if(xhr.readyState===XMLHttpRequest.DONE){
-//       data = JSON.parse(xhr.responseText);
-//       dataList();
-//   };
-// }
+  if(xhr.readyState===XMLHttpRequest.DONE){
+      data = JSON.parse(xhr.responseText);
+      dataList();
+  };
+}
 
 //Asynchronous
 
-function fetchDemo() {
-  if (self.fetch) {
-    fetch(REQUEST_URL).then(function (response) {
-      // fetch(REQUEST_URL).then((response) => {
-      return response.json();
-    }).then(function (json) {
-      data = json;
-      dataList();
-    });
-  } else {
-    xhr.open('GET', REQUEST_URL);
-    xhr.send();
+// function fetchDemo() {
+//   if (self.fetch) {
+//     fetch(REQUEST_URL).then(function (response) {
+//       // fetch(REQUEST_URL).then((response) => {
+//       return response.json();
+//     }).then(function (json) {
+//       data = json;
+//       dataList();
+//     });
+//   } else {
+//     xhr.open('GET', REQUEST_URL);
+//     xhr.send();
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        data = JSON.parse(xhr.responseText);
-        dataList();
-      };
-    };
-  }
-}
+//     xhr.onreadystatechange = function () {
+//       if (xhr.readyState === XMLHttpRequest.DONE) {
+//         data = JSON.parse(xhr.responseText);
+//         dataList();
+//       };
+//     };
+//   }
+// }
 
 //put data into HTML
 var dataList = function dataList() {
@@ -53,6 +53,6 @@ var dataList = function dataList() {
   document.querySelector('#data-list').innerHTML = str;
 };
 
-fetchDemo();
+// fetchDemo();
 
 },{}]},{},[1]);
